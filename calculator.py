@@ -7,7 +7,7 @@ def main():
     operandCount = 0
     operand_1 = 0
     operand_2 = 0
-    result = ""
+
 
 
     #Считаем количество операторов в строке
@@ -26,29 +26,29 @@ def main():
                 textArray = inputMessage.split(i)
                 operand_1 = int(textArray[0].strip())
                 operand_2 = int(textArray[1].strip())
-                if operand_1 & operand_2 <= 10:
+                if (operand_1 <= 10) & (operand_2 <= 10):
                     result = operand_1 + operand_2
 
             elif i == "-":
                 textArray = inputMessage.split(i)
                 operand_1 = int(textArray[0].strip())
                 operand_2 = int(textArray[1].strip())
-                if operand_1 & operand_2 <= 10:
+                if (operand_1 <= 10) & (operand_2 <= 10):
                     result = operand_1 - operand_2
-
-            elif i == "/":
-                textArray = inputMessage.split(i)
-                operand_1 = int(textArray[0].strip())
-                operand_2 = int(textArray[1].strip())
-                if operand_1 & operand_2 <= 10:
-                    result = operand_1 / operand_2
 
             elif i == "*":
                 textArray = inputMessage.split(i)
                 operand_1 = int(textArray[0].strip())
                 operand_2 = int(textArray[1].strip())
-                if operand_1 & operand_2 <= 10:
+                if (operand_1 <= 10) & (operand_2 <= 10):
                     result = operand_1 * operand_2
+
+            elif i == "/":
+                textArray = inputMessage.split(i)
+                operand_1 = int(textArray[0].strip())
+                operand_2 = int(textArray[1].strip())
+                if (operand_1 <= 10) & (operand_2 <= 10):
+                    result = int(operand_1 / operand_2)
 
     print(result)
 
